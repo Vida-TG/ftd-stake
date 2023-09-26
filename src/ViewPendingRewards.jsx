@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fromWei } from 'web3-utils';
+import { ethers } from 'ethers';
 
 function ViewPendingRewards({ contract, userAddress }) {
   const [pendingRewards, setPendingRewards] = useState('0');
@@ -12,8 +12,8 @@ function ViewPendingRewards({ contract, userAddress }) {
 
   const fetchPendingRewards = async () => {
     try {
-      const result = await contract.methods.getPendingHarvestRewards().call({ from: userAddress });
-      setPendingRewards(fromWei(result, 'ether'));
+      const result = await contract.getPendingHarvestRewards();
+      setPendingRewards(ethers.formatEther(result));
     } catch (error) {
       console.error('Error fetching pending rewards:', error);
     }

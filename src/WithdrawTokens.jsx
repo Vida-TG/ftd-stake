@@ -1,10 +1,11 @@
 import React from 'react';
 
-function WithdrawTokens({ contract, userAddress }) {
+function WithdrawTokens({ contract }) {
   const handleWithdraw = async () => {
     try {
-      // Send the withdraw transaction
-      await contract.methods.withdraw().send({ from: userAddress });
+      const tx = await contract.withdraw();
+      await tx.wait();
+      console.log('Withdraw transaction hash:', tx.hash);
     } catch (error) {
       console.error('Error withdrawing tokens:', error);
     }

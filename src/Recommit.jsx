@@ -1,10 +1,11 @@
 import React from 'react';
 
-function Recommit({ contract, userAddress }) {
+function Recommit({ contract }) {
   const handleRecommit = async () => {
     try {
-      // Send the recommit transaction
-      await contract.methods.recommit().send({ from: userAddress });
+      const tx = await contract.recommit();
+      await tx.wait();
+      console.log('Recommit transaction hash:', tx.hash);
     } catch (error) {
       console.error('Error recommitting:', error);
     }

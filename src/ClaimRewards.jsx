@@ -1,10 +1,11 @@
 import React from 'react';
 
-function ClaimRewards({ contract, userAddress }) {
+function ClaimRewards({ contract }) {
   const handleClaimRewards = async () => {
     try {
-      // Send the claim rewards transaction
-      await contract.methods.claimRewards().send({ from: userAddress });
+      const tx = await contract.claimRewards();
+      await tx.wait();
+      console.log('Claim Rewards transaction hash:', tx.hash);
     } catch (error) {
       console.error('Error claiming rewards:', error);
     }

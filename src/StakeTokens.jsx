@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { toWei } from 'web3-utils';
+import { ethers } from 'ethers';
 
-function StakeTokens({ contract, userAddress }) {
+function StakeTokens({ contract }) {
   const [stakeAmount, setStakeAmount] = useState('');
   const [stakeDuration, setStakeDuration] = useState('1');
 
   const handleStake = async () => {
-    const amountInWei = toWei(stakeAmount, "ether");
-    console.log(amountInWei)
+    const amountInWei = ethers.parseEther(stakeAmount);
     const duration = parseInt(stakeDuration);
+    
     try {
-        console.log(amountInWei, duration, userAddress)
-        const tx = await contract.methods.stake(amountInWei, duration).send({ from: userAddress });
-        console.log('Stake transaction hash:', tx.transactionHash);
+      const tx = await contract.stake(amountInWei, duration);
+      await tx.wait();
+      console.log('Stake transaction hash:', tx.hash);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error staking tokens:', error);
     }
   };
 
