@@ -17,7 +17,6 @@ function ViewPendingRewards({ contract, userAddress }) {
   const fetchPendingRewards = async () => {
     try {
       const result = await contract.getPendingHarvestRewards();
-      console.log(result)
       setPendingRewards(ethers.formatEther(result));
     } catch (error) {
       setReason(error.reason)
