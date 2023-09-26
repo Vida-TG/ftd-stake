@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ekp8ytl.css">
+    <link rel="stylesheet" href="https://codepen.io/petebarr/pen/2fc0573674b0f849badd58a15371534e.scss">
+
+    <title>Stake $FTD</title>
+
+</head>
+<body>
+    <div class="container">
+        <img class="blob1" src="./img/purpleblob.png"/>
+        
+
+        <div class="desktopnav">
+            <div>
+                <h1>AI-POWERED<br/>SOCIALFI<br/>TRADING</h1>
+                        <a href="https://app.uniswap.org/swap?&chain=mainnet&use=v2&outputCurrency=0xac7fa7d455fdab8390c4ab9f793520521d266597">
+                            <button>Connect Wallet</button>
+                        </a>
+                        <p>Welcome to the future of social trading with $FTD, an AI-powered trading dashboard & bot designed to optimize your interactions and investments on the FriendTech platform. Tokenomics & Trading algo 
+                            *designed and battle-tested using GPT*</p>
+                        <div class="leftIcons">
+                            <div><a href="https://x.com/friendtech500"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M15.1708 1.875H17.9275L11.905 8.75833L18.99 18.125H13.4416L9.09662 12.4442L4.12495 18.125H1.36662L7.80828 10.7625L1.01245 1.875H6.69995L10.6275 7.0675L15.1691 1.875H15.1708ZM14.2033 16.475H15.7308L5.87078 3.43833H4.23162L14.2033 16.475Z" fill="#F8F8F8"/>
+                                </svg></a></div>
+                            <div><a href="https://t.me/friendtech500"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10.0001 1.66669C5.40008 1.66669 1.66675 5.40002 1.66675 10C1.66675 14.6 5.40008 18.3334 10.0001 18.3334C14.6001 18.3334 18.3334 14.6 18.3334 10C18.3334 5.40002 14.6001 1.66669 10.0001 1.66669ZM13.8667 7.33335C13.7417 8.65002 13.2001 11.85 12.9251 13.325C12.8084 13.95 12.5751 14.1584 12.3584 14.1834C11.8751 14.225 11.5084 13.8667 11.0417 13.5584C10.3084 13.075 9.89175 12.775 9.18341 12.3084C8.35842 11.7667 8.89175 11.4667 9.36675 10.9834C9.49175 10.8584 11.6251 8.91669 11.6667 8.74169C11.6725 8.71518 11.6718 8.68766 11.6645 8.66152C11.6572 8.63538 11.6437 8.61141 11.6251 8.59169C11.5751 8.55002 11.5084 8.56669 11.4501 8.57502C11.3751 8.59169 10.2084 9.36669 7.93341 10.9C7.60008 11.125 7.30008 11.2417 7.03341 11.2334C6.73341 11.225 6.16675 11.0667 5.74175 10.925C5.21675 10.7584 4.80841 10.6667 4.84175 10.375C4.85841 10.225 5.06675 10.075 5.45841 9.91669C7.89175 8.85835 9.50841 8.15835 10.3167 7.82502C12.6334 6.85835 13.1084 6.69169 13.4251 6.69169C13.4917 6.69169 13.6501 6.70835 13.7501 6.79169C13.8334 6.85835 13.8584 6.95002 13.8667 7.01669C13.8584 7.06669 13.8751 7.21669 13.8667 7.33335Z" fill="#F8F8F8"/>
+                                </svg></a></div>
+                        </div>
+            </div>
+        </div>
+        <nav>
+            <div class="logo">
+                <h4class="logo">$FTD - AI <br/> Trading Bot</h4class=>
+            </div>
+            <div class="dashboard">
+                <button class="dashboard" id="connectBtn">Connect</button>
+            </div>
+        </nav>
+        <div class="wrapper">
+           <div class="wrap">
+            <div class="contents">
+                <div class="contentheading">
+                    <h3>Stake $FTD</h3>
+                </div>
+                <div class="stakeform">
+                   <div class="stakeinput">
+                    <input type="number" id="stakeAmount" placeholder="Amount to stake">
+                    <select id="stakeDuration">
+                        <option value="1">1 month</option>
+                        <option value="3">3 months</option>
+                        <option value="6">6 months</option>
+                        <option value="12">12 months</option>
+                    </select>
+                   </div>
+                   <div class="balance"><p><span class="ftdBal">1234</span><span class="f">FTD</span></p><p class="max">Max</p></div>
+                    <button id="stakeBtn">Stake</button>
+                </div>
+            </div>
+           </div>
+            <svg class="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                <path d="M1 1L197 120" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6.56 6.56"/>
+                </svg>
+                <div class="wrap">
+                    <div class="contents">
+                        <div class="contentheading">
+                            <h3>Withdraw Staked Tokens and Rewards</h3>
+                        </div>
+                        <div class="stakeform">
+                           <div class="stakeinput">
+                            <input type="text" id="stakeAmount" placeholder="{num}" style="border-right: none;" disabled>
+                           </div>
+                            <br/>
+                            <button id="claimRewardsBtn">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+                <svg class="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                    <path d="M1 1L197 120" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6.56 6.56"/>
+                    </svg>
+                    <div class="wrap">
+                        <div class="contents">
+                            <div class="contentheading">
+                                <h3>Claim Rewards</h3>
+                            </div>
+                            <div class="stakeform">
+                               <div class="stakeinput">
+                                <input type="text" id="stakeAmount" placeholder="{num}" style="border-right: none;" disabled>
+                               </div>
+                                <br/>
+                                <button id="claimRewardsBtn">Claim</button>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                        <path d="M1 1L197 120" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6.56 6.56"/>
+                        </svg>
+                        <div class="wrap">
+                            <div class="contents">
+                            <div class="contentheading">
+                                <h3>Recommit</h3>
+                            </div>
+                            <div class="stakeform">
+                               <div class="stakeinput">
+                                <input type="text" id="stakeAmount" placeholder="{num}" style="border-right: none;" disabled>
+                               </div>
+                                <br/>
+                                <button id="claimRewardsBtn">Claim</button>
+                            </div>
+                        </div>
+                        </div>
+                        <svg class="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                            <path d="M1 1L197 120" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6.56 6.56"/>
+                            </svg>
+                            <div class="wrap">
+                                <div class="contents">
+                                    <div class="contentheading">
+                                        <h3>Harvest</h3>
+                                    </div>
+                                    <div class="stakeform">
+                                       <div class="stakeinput">
+                                        <input type="text" id="stakeAmount" placeholder="{num}" style="border-right: none;" disabled>
+                                       </div>
+                                        <br/>
+                                        <button id="claimRewardsBtn">Harvest</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                                <path d="M1 1L197 120" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6.56 6.56"/>
+                                </svg>
+         
+            
+        </div>
+
+        </div>
+        
+       
+    </div>
+    
+    <script src="./main.js"></script>
+    <script>
+        let web3;
+    let contract;
+    let userAddress;
+
+    const contractAddress = '0x0AB6342741dA644AFA7C1A36cE16C99d74FD9605';
+    const abi = [{"inputs":[{"internalType":"address","name":"_teamWallet","type":"address"},{"internalType":"address","name":"_v2Router","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"account","type":"address"},{"indexed":false,"internalType":"bool","name":"isExcluded","type":"bool"}],"name":"ExcludeFromFees","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"pair","type":"address"},{"indexed":true,"internalType":"bool","name":"value","type":"bool"}],"name":"SetAutomatedMarketMakerPair","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"tokensSwapped","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"ethReceived","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"tokensIntoLiquidity","type":"uint256"}],"name":"SwapAndLiquify","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"newAddress","type":"address"},{"indexed":true,"internalType":"address","name":"oldAddress","type":"address"}],"name":"UpdateUniswapV2Router","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"newWallet","type":"address"},{"indexed":true,"internalType":"address","name":"oldWallet","type":"address"}],"name":"operationalWalletUpdated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"newWallet","type":"address"},{"indexed":true,"internalType":"address","name":"oldWallet","type":"address"}],"name":"teamWalletUpdated","type":"event"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"_isExcludedMaxTransactionAmount","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address[]","name":"_addrs","type":"address[]"}],"name":"addPresaleWallets","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"automatedMarketMakerPairs","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_addr","type":"address"}],"name":"blacklist","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"lpAddress","type":"address"}],"name":"blacklistLiquidityPool","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"blacklistRenounced","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyLiquidityFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyOperationalFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyTeamFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyTotalFees","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deadAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"disableTrading","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"enableTrading","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"},{"internalType":"bool","name":"excluded","type":"bool"}],"name":"excludeFromFees","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"updAds","type":"address"},{"internalType":"bool","name":"isEx","type":"bool"}],"name":"excludeFromMaxTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"isBlacklisted","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"isExcludedFromFees","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"isPresaleWallet","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"limitsInEffect","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxTransactionAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"operationalWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"presaleEndTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"removeLimits","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address[]","name":"_addrs","type":"address[]"}],"name":"removePresaleWallets","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceBlacklist","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"sellLiquidityFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellOperationalFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellPresaleLiquidityFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellPresaleOperationalFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellPresaleTeamFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellPresaleTotalFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellTeamFee","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellTotalFees","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"pair","type":"address"},{"internalType":"bool","name":"value","type":"bool"}],"name":"setAutomatedMarketMakerPair","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"swapEnabled","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"swapTokensAtAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"teamWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensForLiquidity","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensForOperations","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensForTeam","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tradingActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_addr","type":"address"}],"name":"unblacklist","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"uniswapV2Pair","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"uniswapV2Router","outputs":[{"internalType":"contract IUniswapV2Router02","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_buyTeamFee","type":"uint256"},{"internalType":"uint256","name":"_buyLiquidityFee","type":"uint256"},{"internalType":"uint256","name":"_buyOperationalFee","type":"uint256"}],"name":"updateBuyFees","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newNum","type":"uint256"}],"name":"updateMaxTxnAmount","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newNum","type":"uint256"}],"name":"updateMaxWalletAmount","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newWallet","type":"address"}],"name":"updateOperationalWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_sellTeamFee","type":"uint256"},{"internalType":"uint256","name":"_sellLiquidityFee","type":"uint256"},{"internalType":"uint256","name":"_sellOperationalFee","type":"uint256"}],"name":"updateSellFees","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"enabled","type":"bool"}],"name":"updateSwapEnabled","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newAmount","type":"uint256"}],"name":"updateSwapTokensAtAmount","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newTeamWallet","type":"address"}],"name":"updateTeamWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"toAddr","type":"address"}],"name":"withdrawStuckEth","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawStuckFT500","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_token","type":"address"},{"internalType":"address","name":"_to","type":"address"}],"name":"withdrawStuckToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}];
+    
+        async function initializeWeb3() {
+            if (window.ethereum) {
+                web3 = new Web3(window.ethereum);
+                try {
+                    // Request account access
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    userAccount = accounts[0];
+                    setupContract();
+                    fetchTokenBalance();
+                } catch (error) {
+                    console.error("User denied account access");
+                }
+            }
+            else if (window.web3) {
+                web3 = new Web3(window.web3.currentProvider);
+                setupContract();
+                fetchTokenBalance();
+            }
+            else {
+                console.log("No Ethereum browser extension detected. Try installing MetaMask.");
+            }
+        }
+
+        function setupContract() {
+            contract = new web3.eth.Contract(abi, contractAddress);
+        }
+
+        async function fetchTokenBalance() {
+            try {
+                const decimals = await contract.methods.decimals().call();
+                const balance = await contract.methods.balanceOf(userAccount).call();
+                const exactBalance = balance / (10 ** decimals);
+                document.querySelector('.ftdBal').textContent = exactBalance;
+            } catch (error) {
+                console.error("Error fetching token balance:", error);
+                alert("you aren't holding $/FTD")
+            }
+        }
+
+    document.getElementById('connectBtn').addEventListener('click', initializeWeb3);
+    </script>
+    
+</body>
+</html>

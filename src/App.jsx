@@ -7,6 +7,10 @@ import Recommit from './Recommit';
 import ViewPendingRewards from './ViewPendingRewards';
 import StakeTokens from './StakeTokens';
 
+import blob from './img/purpleblob.png'
+import DashboardDet from './DashboardDet';
+import Modal from './Modal';
+
 function App() {
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
@@ -100,39 +104,103 @@ function App() {
     }
   }, [provider, userAddress, contract]);
 
-  return (
-    <div className="App">
-      <h1>FT500 Staking</h1>
-
-      <button id="connectBtn" onClick={isConnected ? disconnectWallet : connectWallet}>
-        {isConnected ? 'Disconnect Wallet' : 'Connect Wallet'}
-      </button>
-
-      {isConnected && (
-        <div>
-          <p>Connected to Ethereum Mainnet</p>
-          <p>User Address: {userAddress}</p>
-          <p>Balance: {tokenBalance}FTD</p>
-        </div>
-      )}
+  if (isConnected) {
+    return (
+      <div className="App">
 
       { isValid ?
         (
-          <>
-            <StakeTokens contract={contract} provider={provider} />
-            <WithdrawTokens contract={contract} userAddress={userAddress} />
-            <ClaimRewards contract={contract} userAddress={userAddress} />
-            <Recommit contract={contract} userAddress={userAddress} />
-            <ViewPendingRewards contract={contract} userAddress={userAddress} />
-          </>
+          <div className="container">
+            <img className="blob1" src={blob}/>
+            <>
+                <div className="desktopnav">
+                    <div>
+                        <h1>AI-POWERED<br/>SOCIALFI<br/>TRADING</h1>
+                            <button className="point" onClick={disconnectWallet}>Disconnect Wallet</button>
+                            <DashboardDet contract={contract} userAddress={userAddress} />
+                    </div>
+                </div>
+                <nav>
+                    <div className="logo">
+                        <h4 className="logo">$FTD - AI <br/> Trading Bot</h4>
+                    </div>
+                    <div className="dashboard">
+                        <button className="point dashboard" onClick={disconnectWallet} id="connectBtn">Disconnect</button>
+                    </div>
+                </nav>
+            </>
+            
+            <div className="wrapper">
+              <StakeTokens contract={contract} balance={tokenBalance} />
+              <svg className="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                <path d="M1 1L197 120" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="6.56 6.56"/>
+              </svg>
+              <WithdrawTokens contract={contract} />
+              <svg className="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                <path d="M1 1L197 120" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="6.56 6.56"/>
+              </svg>
+              <ClaimRewards contract={contract} />
+              <svg className="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                <path d="M1 1L197 120" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="6.56 6.56"/>
+              </svg>
+              <Recommit contract={contract} />
+              <svg className="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                <path d="M1 1L197 120" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="6.56 6.56"/>
+              </svg>
+              <ViewPendingRewards contract={contract} />
+              <svg className="line" xmlns="http://www.w3.org/2000/svg" width="198" height="121" viewBox="0 0 198 121" fill="none">
+                <path d="M1 1L197 120" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="6.56 6.56"/>
+              </svg>
+            </div>
+          </div>
         )
       :
-          <>
-            You are not holding FTD fren
-          </>
+      <>
+        <div className="desktopnav">
+            <div>
+                <h1>AI-POWERED<br/>SOCIALFI<br/>TRADING</h1>
+                <button className="point" onClick={disconnectWallet}>Disconnect Wallet</button>
+                <DashboardDet />
+                
+            </div>
+        </div>
+        <nav>
+            <div className="logo">
+                <h4 className="logo">$FTD - AI <br/> Trading Bot</h4>
+            </div>
+            <div className="dashboard">
+                <button  className="point dashboard" onClick={disconnectWallet} id="connectBtn">Disconnect</button>
+            </div>
+        </nav>
+        <Modal text="You need to hold FTD" status="error" />
+      </>
       }
     </div>
-  );
+    )
+  }
+
+  else {
+    return (
+      <>
+                <div className="desktopnav">
+                    <div>
+                        <h1>AI-POWERED<br/>SOCIALFI<br/>TRADING</h1>
+                            <button className='point' onClick={connectWallet}>Connect Wallet</button>
+                            <DashboardDet />
+                    </div>
+                </div>
+                <nav>
+                    <div className="logo">
+                        <h4 className="logo">$FTD - AI <br/> Trading Bot</h4>
+                    </div>
+                    <div className="dashboard">
+                        <button  className="point dashboard" onClick={connectWallet} id="connectBtn">Connect</button>
+                    </div>
+                </nav>
+      </>
+            
+    );
+  }
 }
 
 export default App;
