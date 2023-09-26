@@ -320,6 +320,17 @@ nav .dashboard button {
   color: #000;
   border-radius: 2px;
 }
+.modal-bottom {
+  position: fixed;
+  z-index: 1000 !important;
+  width: 80vw;
+  max-width: 350px;
+  padding: 10px 20px 12px 15px;
+  color: #000;
+  border-radius: 2px;
+  bottom: 30px !important;
+  right: 30px !important;
+}
 .modal-header {
   display: flex;
   justify-content: space-between;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Modal = ({ text, status }) => {
+const Modal = ({ text, status, position }) => {
   const [color, setColor] = useState('');
   const [hidden, setHidden] = useState(false);
   const [header, setHeader] = useState('');
@@ -26,7 +26,7 @@ const Modal = ({ text, status }) => {
   }, [status]);
 
   return (
-    <div style={{ background: color }} className={`modal ${hidden ? 'modal-closed' : ""}`}>
+    <div style={{ background: color }} className={`${hidden ? 'modal-closed' : ""} ${position ? 'modal-bottom' : 'modal'}`}>
       <div className='modal-header'>
         <div>{header}</div>
         <div style={{ cursor: "pointer" }} onClick={() => setHidden(true)}>x</div>

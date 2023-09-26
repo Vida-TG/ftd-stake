@@ -197,6 +197,8 @@ function App() {
                         <button  className="point dashboard" onClick={connectWallet} id="connectBtn">Connect</button>
                     </div>
                 </nav>
+                  
+            <Modal text="Connect your wallet to continue" status="error" position="bottom" />
       </>
             
     );
