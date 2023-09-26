@@ -9,7 +9,7 @@ function ViewPendingRewards({ contract, userAddress }) {
   const [pendingRewards, setPendingRewards] = useState('0');
 
   useEffect(() => {
-    if (contract && userAddress) {
+    if (contract) {
       fetchPendingRewards();
     }
   }, [contract, userAddress]);
@@ -17,11 +17,10 @@ function ViewPendingRewards({ contract, userAddress }) {
   const fetchPendingRewards = async () => {
     try {
       const result = await contract.getPendingHarvestRewards();
+      console.log(result)
       setPendingRewards(ethers.formatEther(result));
-      setShowSModal(true)
     } catch (error) {
       setReason(error.reason)
-      setShowEModal(true)
     }
   };
 
