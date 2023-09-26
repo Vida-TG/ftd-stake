@@ -45,7 +45,7 @@ function ViewPendingRewards({ contract, userAddress }) {
         </div>
         <div className="stakeform">
           <div className="stakeinput">
-            <input type="text" id="stakeAmount" placeholder={`${pendingRewards} FTD is available to claim`} style={{borderRight: "none"}} disabled />
+            <input type="text" id="stakeAmount" placeholder={`${pendingRewards} FTD is available to harvest`} style={{borderRight: "none"}} disabled />
           </div>
             <br/>
             <button id="claimRewardsBtn" onClick={harvestETH}>Harvest</button>

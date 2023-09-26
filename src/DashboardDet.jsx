@@ -4,31 +4,36 @@ import Modal from './Modal';
 
 const DashboardDet = ({contract, userAddress}) => {
   const [reason, setReason] = useState('');
-  const [duration, setDuration] = useState('');
-  const [daysStaked, setDaysStaked] = useState('');
-  const [monthsStaked, setMonthsStaked] = useState('');
+  const [stakeDate, setStakeDate] = useState('');
+  const [stakeDuration, setStakeDuration] = useState('');
+  const [stakeCompletionDate, setStakeCompletionDate] = useState('');
   const [showEModal, setShowEModal] = useState(false);
 
   useEffect(() => {
     if (contract && userAddress) {
-      fetchPendingRewards(contract, userAddress);
+      fetchStakeDetails(contract, userAddress);
     }
   }, [contract, userAddress]);
 
-  const fetchPendingRewards = async (contract, userAddress) => {
+  const fetchStakeDetails = async (contract, userAddress) => {
     try {
       const userStake = await contract.stakes(userAddress);
-      console.log(contract)
-      const durationInSec = userStake.duration
-      const startTime = userStake.startTime
+      let durationInSec = userStake.duration;
+      let startTime = userStake.startTime;
 
-      const duration = durationInSec / (24*60*60*30)
-      const elapsedTime = (new Date().getTime() / 1000) - startTime
+      durationInSec = Number(durationInSec);
+      startTime = Number(startTime);
 
-      setDaysStaked(elapsedTime / (24*60*60))
-      setMonthsStaked(elapsedTime / (20*60*60*30))
+      const duration = durationInSec / (24 * 60 * 60 * 30);
 
-      setDuration(duration);
+      const elapsedTime = (new Date().getTime() / 1000) - startTime;
+
+      const startDate = new Date(startTime * 1000);
+      const completionDate = new Date(startTime * 1000 + durationInSec * 1000);
+
+      setStakeDate(startDate.toDateString());
+      setStakeDuration(duration);
+      setStakeCompletionDate(completionDate.toDateString());
 
     } catch (error) {
       setReason("Error getting active stakes")
@@ -53,6 +58,12 @@ const DashboardDet = ({contract, userAddress}) => {
             </div>
         </div>
           { showEModal && <Modal text={reason} status="error" /> }
+          <div>
+            <h2>Stake Information</h2>
+            <p>Stake date: {stakeDate}</p>
+            <p>Stake duration: {stakeDuration} months</p>
+            <p>Expected completion date: {stakeCompletionDate}</p>
+          </div>
     </>
   )
 }
